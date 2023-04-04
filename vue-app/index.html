@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript">
+            window._AMapSecurityConfig = { serviceHost: 'http://ncovapi.funcjin.cn/_AMapService' }
+        </script>
+        <title>全国疫情数据可视化</title>
+    </head>
+    <body>
+        <!-- app -->
+        <article id="root"></article>
+        <!-- global message -->
+        <article id="global" style="position: fixed; z-index: 199">
+            <section class="g-covid19-message"></section>
+        </article>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>

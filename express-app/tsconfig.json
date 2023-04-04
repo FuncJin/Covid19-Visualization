@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        "target": "ESNext",
+        "module": "commonjs",
+        "outDir": "./release",
+        "removeComments": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true
+    }
+}

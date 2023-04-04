@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "strict": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "removeComments": true,
+        "lib": ["ESNext", "DOM"],
+        "skipLibCheck": true,
+        "noEmit": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*", "src/*/index.vue"],
+            "@api/*": ["src/api/*"],
+            "@assets/*": ["src/assets/*"],
+            "@components/*": ["src/components/*", "src/components/*/index.vue"],
+            "@config/*": ["src/config/*"],
+            "@constant/*": ["src/constant/*"],
+            "@interface/*": ["src/interface/*"],
+            "@utils/*": ["src/utils/*"],
+            "@views/*": ["src/views/*", "src/views/*/index.vue"]
+        },
+        "composite": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["src/**/*.json", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
+}

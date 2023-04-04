@@ -1,0 +1,8 @@
+# eslint
+/.eslintrc.cjs
+
+# typescript
+/tsconfig.json
+
+# vite
+/vite.config.js

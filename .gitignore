@@ -1,0 +1,11 @@
+# node_modules
+node_modules/
+
+# Back end
+/express-app/config/release.ts
+/express-app/release
+
+# Front end
+/vue-app/src/config/alpha.ts
+/vue-app/src/config/release.ts
+/vue-app/dist

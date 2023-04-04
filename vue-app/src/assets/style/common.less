@@ -1,0 +1,52 @@
+#root,
+.covid19 {
+    height: 100%;
+}
+.covid19-data-panel {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 3rem;
+    border-radius: 6px;
+    color: var(--text-primary-color);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(5px);
+    background-color: var(--panel-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+
+    li {
+        margin-bottom: 5px;
+    }
+
+    .n-d-title {
+        font-weight: 700;
+        word-wrap: break-word;
+    }
+    .n-d-comments {
+        font-size: 12px;
+        color: var(--text-comments-color);
+    }
+}
+.covid19-theme-transition-bg {
+    transition: background-color 0.3s;
+}
+.covid19-theme-transition-text-color {
+    transition: color 0.35s 0.3s;
+}
+.covid19-theme-transition-bg-tcolor {
+    transition: background-color 0.3s, color 0.5s 0.2s;
+}
+.covid19-data-confirmedCount {
+    color: rgb(255, 182, 0);
+}
+.covid19-data-suspectedCount {
+    color: rgb(0, 147, 213);
+}
+.covid19-data-curedCount {
+    color: rgb(15, 155, 56);
+}
+.covid19-data-deadCount {
+    color: rgb(216, 100, 34);
+}
