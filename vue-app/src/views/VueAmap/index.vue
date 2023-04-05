@@ -147,9 +147,8 @@ pubsub.subscribe('switchStyle', (_, key) => switchStyle(key))
         left: 20px;
     }
     .b-panel-right {
-        top: 60%;
+        bottom: 25%;
         right: 20px;
-        transform: translateY(-50%);
     }
     .b-reset-pos {
         width: 33px;

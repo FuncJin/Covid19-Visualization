@@ -45,6 +45,7 @@ const colorClassify = [
 <style lang="less" scoped>
 #ncov-color-classify {
     width: 180px;
+    margin-bottom: 0;
     li {
         display: flex;
         align-items: center;
