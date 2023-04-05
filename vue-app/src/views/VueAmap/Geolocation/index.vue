@@ -33,21 +33,20 @@ const provCities = inject(injectionKey.PROVCITIES, defaultValue.provCities)
 
 const getLocation = (e: GetLocation) => {
     const lang = () => i18nMap.body.amap.location.globalMsg
-    const { province, city, type, adcode } = e
-    // 已知的定位成功
-    if (type === 'complete') {
-        const cur = provCities.find((a) => a.adcode === adcode)
-        if (cur) pubsub.publish('searchAreaData', { ...cur, isMsg: false })
+    const { province, city, adcode } = e
+    // 若省、市、邮政编码有一个不存在，则视为本次定位失败
+    if (!(province && city && adcode))
         return message({
-            title: lang().success.title,
-            content: lang().success.content + `${province}${city}`
+            title: lang().warn.title,
+            content: lang().warn.content,
+            type: 'warn'
         })
-    }
-    // 已知的定位失败
-    message({
-        title: lang().warn.title,
-        content: lang().warn.content,
-        type: 'warn'
+    // 否则一律视为定位成功
+    const cur = provCities.find((a) => a.adcode === adcode)
+    if (cur) pubsub.publish('searchAreaData', { ...cur, isMsg: false })
+    return message({
+        title: lang().success.title,
+        content: lang().success.content + `${province}${city}`
     })
 }
 </script>
