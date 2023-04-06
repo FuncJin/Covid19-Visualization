@@ -13,5 +13,13 @@ export type EventsName = 'switchStyle' | 'searchAreaData' | 'highArea'
 
 export type subscribeCallback<T = any> = (name: EventsName, fn: T) => void
 
+/** switchStyle事件的数据 */
+export type SwitchStyle = {
+    /** 当前地图的样式名称 */
+    style: string
+    /** 当前地图的编号 */
+    key: number
+}
+
 /** searchAreaData事件的数据 */
 export type SearchAreaDataType = Covid19ProvOrCityData & { isMsg?: boolean }

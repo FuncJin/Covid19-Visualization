@@ -24,6 +24,7 @@ import { ref, inject } from 'vue'
 import pubsub from '@utils/pubsub'
 import storage from '@utils/storage'
 import constant from '@constant/index'
+import styleUtils from '@utils/style'
 
 const { injectionKey, defaultValue } = constant
 
@@ -37,13 +38,17 @@ const _mapStyle = ['normal', 'macaron', 'whitesmoke', 'dark', 'fresh', 'darkblue
 /** 当前选择的主题编号(临时) */
 const order = ref(_order ? Number(_order) : 0)
 
+const style = styleUtils.adaptation()
+// 当面板展开时，跟随系统主题切换也会同步切换编号
+style.dark.push(() => (order.value = 3))
+style.light.push(() => (order.value = 0))
 /** 切换主题 */
 const switchStyle = (key: number) => {
     // 记录下本次的key(临时)
     order.value = key
     storage.setItem('theme_order', String(key))
     // 切换主题
-    pubsub.publish('switchStyle', _mapStyle[key])
+    pubsub.publish('switchStyle', { style: _mapStyle[key], key })
 }
 </script>
 

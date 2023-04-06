@@ -1,10 +1,10 @@
-import type { EventsName, subscribeCallback, SearchAreaDataType } from './interface'
+import type { EventsName, subscribeCallback, SwitchStyle, SearchAreaDataType } from './interface'
 
 class PubSub {
     /** map: [[eventName, fn]] */
     private readonly container = new Map<EventsName, Function[]>([])
     /** 发布 */
-    publish(name: 'switchStyle', data: string): void
+    publish(name: 'switchStyle', data: SwitchStyle): void
     publish(name: 'highArea', data: string): void
     publish(name: 'searchAreaData', data: SearchAreaDataType): void
     publish(name: EventsName, data: any) {
@@ -19,7 +19,7 @@ class PubSub {
         fn.forEach((f) => f(...[name, data]))
     }
     /** 订阅 */
-    subscribe(name: 'switchStyle', fn: subscribeCallback<string>): void
+    subscribe(name: 'switchStyle', fn: subscribeCallback<SwitchStyle>): void
     subscribe(name: 'highArea', fn: subscribeCallback<string>): void
     subscribe(name: 'searchAreaData', fn: subscribeCallback<SearchAreaDataType>): void
     subscribe(name: EventsName, fn: subscribeCallback<any>) {

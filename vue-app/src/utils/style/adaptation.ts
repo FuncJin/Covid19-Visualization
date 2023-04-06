@@ -1,3 +1,9 @@
+type AdaptationData = {
+    theme: string
+    light: Function[]
+    dark: Function[]
+}
+
 /**
  * 用于查询当前系统是深色还是浅色模式
  * @returns {
@@ -9,13 +15,13 @@
  * }
  */
 const topicAdaptation = () => {
-    const data = {
+    const data: AdaptationData = {
         /** 当前系统主题模式 */
         theme: '',
-        /** 切换至浅色模式时调用 */
-        light: () => {},
-        /** 切换至深色模式时调用 */
-        dark: () => {}
+        /** 切换至浅色模式时调用(允许多个地方监听) */
+        light: [],
+        /** 切换至深色模式时调用(允许多个地方监听) */
+        dark: []
     }
     /** 媒体查询 */
     const mediaQuery = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')
@@ -24,11 +30,11 @@ const topicAdaptation = () => {
         if (mediaQuery.matches) {
             // 深色模式
             data.theme = 'dark'
-            data.dark()
+            data.dark.forEach((f) => f())
         } else {
             // 浅色模式
             data.theme = '_light'
-            data.light()
+            data.light.forEach((f) => f())
         }
     }
     handle()
