@@ -68,7 +68,7 @@ const load = () => {
     // 取消加载动画
     isLoading.value = false
     /** covid19开始时间 */
-    const start = Number(new Date('2019-12-08 00:00:00'))
+    const start = Number(new Date('2019/12/08 00:00:00'))
     /** 当前时间 */
     const cur = Number(new Date())
     const day = 1000 * 60 * 60 * 24
