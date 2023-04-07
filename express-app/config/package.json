@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "pinyin-pro": "^3.13.1",
+    "request": "^2.88.2"
+  }
+}
