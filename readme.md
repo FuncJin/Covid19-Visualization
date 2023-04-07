@@ -73,3 +73,7 @@ readme.md # 说明文档
 
 1. [在线演示地址](https://covid19.funcjin.cn/)
 2. [此项目的接口托管文档 Apifox](https://www.apifox.cn/apidoc/shared-7f32c20d-07b3-4914-b5b2-4906d6040745)
+
+# LICENSE
+
+[MIT](https://github.com/FuncJin/Covid19-Visualization/blob/main/LICENSE)
