@@ -1,7 +1,7 @@
 <template>
     <Transition name="bg-img">
         <section class="covid19-bg-img" v-if="isShowBg">
-            <img :src="covid19Img" @load="load" />
+            <img :src="currentDevice() ? covid19SmallImg : covid19LargeImg" @load="load" />
             <div class="c-v-center" v-if="isLoading">
                 <div class="c-v-loading"></div>
             </div>
@@ -23,8 +23,10 @@ import { ref, reactive } from 'vue'
 import Typewriter from '@components/Typewriter'
 
 import documentUtils from '@utils/document'
+import currentDevice from '@utils/currentDevice'
 
-import covid19Img from '@assets/imgs/video.png'
+import covid19LargeImg from '@assets/imgs/video_large.png'
+import covid19SmallImg from '@assets/imgs/video_small.png'
 
 /** 定时器id */
 let timerId = null as unknown as NodeJS.Timeout
